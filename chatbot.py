@@ -117,7 +117,7 @@ def preprocess_text(text):
 
 
 def crear_chatbot():
-    print("¡Hola! Soy el chatbot del ITSUR. ¿En qué puedo ayudarte hoy?")
+    print("¡Hola! Soy Chatito, el aistente del ITSUR. ¿En qué puedo ayudarte hoy?")
     chatbot = Chat(pares, reflections)
     # Sobrescribir método _preprocess para el procesamiento personalizado del texto
     chatbot._preprocess = preprocess_text
