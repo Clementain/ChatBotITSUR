@@ -321,6 +321,18 @@ pares = [
         ["Es la actividad de carácter temporal y obligatoria que institucionalmente ejecuten y presten los y las estudiantes a beneficio de la sociedad y el Estado.\nObjetivo del Servicio Social:\nDesarrollar en el y la prestadora una conciencia de solidaridad y compromiso con la sociedad a la que pertenece, convirtiéndose en un verdadero vínculo de reciprocidad para con la misma, a través de los planes y programas del sector público, contribuyendo a la formación académica y capacitación profesional del prestador del Servicio Social."]
     ],
     [
+        r".*costo de fichas de admision.*",
+        ["Las fichas de admision para nuevos aspirantes tiene el costo de 700 pesos"]
+    ],
+    [
+        r".*documentos.*.*(inscripcion|inscribirme|admision).*",
+        ["Constancia del último semestre de bachillerato o Certificado de Bachillerato(formato pdf)\nActa de nacimiento(formato pdf)\n CURP(formato pdf)\nComprobante de domicilio(formato pdf)\nComprobante SUREDSU(formato pdf)\nFoto o selfie tomada completamente de frente, con el rostro serio, frente descubierta, a la altura de los hombros y fondo blanco o en un color claro (formato jpg o png) "]
+    ],
+    [
+        r".*descuentos.*.*beca.*convenio.*",
+        ["Claro! existen becas que relizan un descuento en las inscripciones, pregunta en servicios escolares para una informacion actualizada"]
+    ],
+    [
         r".*(ayuda|informacion).*",
         ["Puedes preguntarme sobre las carreras ofertadas en el ITSUR o pedir información específica sobre alguna carrera en particular."]
     ],
