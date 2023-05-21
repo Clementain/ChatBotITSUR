@@ -23,7 +23,7 @@ pares = [
         ["Claro, al tener varias áreas, es mejor que te proporcione el link al directorio para que encuentres lo que busques:\nhttp://www.itsur.edu.mx/directorio.php/"]
     ],
     [
-        r".*horario de atencion.*",
+        r".*(horario de atencion|horarios).*",
         ["De lunes a viernes en horario continuo de 8:00a.m. a 04:00p.m"]
     ],
     [
@@ -326,6 +326,10 @@ pares = [
     [
         r".*(ayuda|informacion).*",
         ["Puedes preguntarme sobre las carreras ofertadas en el ITSUR o pedir información específica sobre alguna carrera en particular."]
+    ],
+    [
+        r".*?(pagos|pago|pagar).*?(constancia|constancias|titulo).*?",
+        ["Los pagos de cualquier tipo se realizan en la oficina de tesoreria en el horario de atención de 9:00 am a 4:00pm"]
     ],
     [
         r".*(gracias|adios).*",
