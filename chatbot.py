@@ -31,10 +31,9 @@ pares = [
         ["Si deseas inscribirte o sacar una ficha para postularte al ITSUR, revisa frecuentementa las convocatorias en nuestra página oficial o ponte en contacto:\n 445 458 8278, 445 457 7468 al 71, 445 458 8311, 445 458 8312 ext. *116\n445 106 6007 fichas@itsur.edu.mx\nAv. Educación Superior No. 2000, Col. Juárez, Uriangato, Gto. C.P. 38982\nTodos los derechos reservados © ITSUR 2023\nDe igual forma puedes acceder a esta página para ver cual es el proceso de sacar una ficha:\nhttps://fichas.surguanajuato.tecnm.mx/"]
     ],
     [
-        r".*(carreras|opciones).*(oferta|ofertadas|disponibles|ofrece|dispone|tiene).*",
+        r".(cuales|que)?.(son)?.*(carreras|opciones).*(oferta|ofertadas|disponibles|ofrece|dispone|tiene)?.*",
         ["En el ITSUR ofrecemos las siguientes carreras: \n\n- Gastronomía\n- Ing. S. Automotrices\n- Ing. Ambiental\n- Ing. Sistemas C.\n- Ing. Industrial\n- Ing. Electrónica\n- Ing. Gestión Empresarial"]
     ],
-
     [
         r".*(carrera|informacion|info).*sistemas.*",
         ["La carrera de sistemas está actualmente especializada en Desarrollo web y aplicaciones móviles, si tienes más dudas puedes preguntarme de la carga académica de esta especialidad por semestre o solamente en general"]
@@ -302,7 +301,11 @@ pares = [
     ],
     # Ingles
     [
-        r".*ingles.*",
+        r".*niveles.*ingles.*",
+        ["Contamos con 10 niveles de acrerditación que llegan hasta B1, esto para estudiantes y para externos ofrecemos 12 niveles"]
+    ],
+    [
+        r".*?ingles.*",
         ["Estando en cualquier carrera, debes de tener por minimo 5 niveles acreditados de inglés para liberar/hacer tu servicio social y 10 niveles para poder hacer tus residencias profesionales"]
     ],
     # Tutorias
