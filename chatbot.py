@@ -19,11 +19,16 @@ pares = [
         ["DIRECCIÓN DEL PLANTEL:\nAv. EducaciÓn Superior #2000,\nCol. Benito Juárez.\nUriangato, Gto.\nC.P. 38980"]
     ],
     [
+        r".*Cuantos alumnos?.*",
+        ["Actualmente hay 1712 alumnos inscritos al ITSUR en alguna de sus 7 carreras"]
+    ],
+    [
         r".*(directorio|contacto).*",
         ["Claro, al tener varias áreas, es mejor que te proporcione el link al directorio para que encuentres lo que busques:\nhttp://www.itsur.edu.mx/directorio.php/"]
     ],
     [
-        r".*horario de atencion.*",
+
+        r".*(horario de atencion|horarios).*",
         ["De lunes a viernes en horario continuo de 8:00a.m. a 04:00p.m"]
     ],
     [
@@ -31,10 +36,13 @@ pares = [
         ["Si deseas inscribirte o sacar una ficha para postularte al ITSUR, revisa frecuentementa las convocatorias en nuestra página oficial o ponte en contacto:\n 445 458 8278, 445 457 7468 al 71, 445 458 8311, 445 458 8312 ext. *116\n445 106 6007 fichas@itsur.edu.mx\nAv. Educación Superior No. 2000, Col. Juárez, Uriangato, Gto. C.P. 38982\nTodos los derechos reservados © ITSUR 2023\nDe igual forma puedes acceder a esta página para ver cual es el proceso de sacar una ficha:\nhttps://fichas.surguanajuato.tecnm.mx/"]
     ],
     [
-        r".*(carreras|opciones).*(oferta|ofertadas|disponibles|ofrece|dispone|tiene).*",
+        r".(cuales|que)?.(son)?.*(carreras|opciones).*(oferta|ofertadas|disponibles|ofrece|dispone|tiene)?.*",
         ["En el ITSUR ofrecemos las siguientes carreras: \n\n- Gastronomía\n- Ing. S. Automotrices\n- Ing. Ambiental\n- Ing. Sistemas C.\n- Ing. Industrial\n- Ing. Electrónica\n- Ing. Gestión Empresarial"]
     ],
-
+    [
+        r".*fecha limite*",
+        ["Actualmente la fecha limite para inscripción para el examen de admisión es el 31 de Mayo del 2023"]
+    ],
     [
         r".*(carrera|informacion|info).*sistemas.*",
         ["La carrera de sistemas está actualmente especializada en Desarrollo web y aplicaciones móviles, si tienes más dudas puedes preguntarme de la carga académica de esta especialidad por semestre o solamente en general"]
@@ -298,11 +306,15 @@ pares = [
     # Materias de noveno (residencias)
     [
         r".*(residencias|residencias profesionales).*",
-        ["Es una estrategia educativa de carácter curricular, que permite al estudiante emprender un proyecto teórico-pr?ctico, analítico, reflexivo, crítico y profesional; con el propósito de resolver un problema específico de la realidad social y productiva, para fortalecer y aplicar sus competencias profesionales.\nEl proyecto de Residencia Profesional puede realizarse de manera individual, grupal o interdisciplinaria; dependiendo de los requerimientos, condiciones y características del proyecto de la empresa, organismo o dependencia."]
+        ["Es una estrategia educativa de carácter curricular, que permite al estudiante emprender un proyecto teórico-practico, analítico, reflexivo, crítico y profesional; con el propósito de resolver un problema específico de la realidad social y productiva, para fortalecer y aplicar sus competencias profesionales.\nEl proyecto de Residencia Profesional puede realizarse de manera individual, grupal o interdisciplinaria; dependiendo de los requerimientos, condiciones y características del proyecto de la empresa, organismo o dependencia."]
     ],
     # Ingles
     [
-        r".*ingles.*",
+        r".*niveles.*ingles.*",
+        ["Contamos con 10 niveles de acrerditación que llegan hasta B1, esto para estudiantes y para externos ofrecemos 12 niveles"]
+    ],
+    [
+        r".*?ingles.*",
         ["Estando en cualquier carrera, debes de tener por minimo 5 niveles acreditados de inglés para liberar/hacer tu servicio social y 10 niveles para poder hacer tus residencias profesionales"]
     ],
     # Tutorias
@@ -321,9 +333,29 @@ pares = [
         ["Es la actividad de carácter temporal y obligatoria que institucionalmente ejecuten y presten los y las estudiantes a beneficio de la sociedad y el Estado.\nObjetivo del Servicio Social:\nDesarrollar en el y la prestadora una conciencia de solidaridad y compromiso con la sociedad a la que pertenece, convirtiéndose en un verdadero vínculo de reciprocidad para con la misma, a través de los planes y programas del sector público, contribuyendo a la formación académica y capacitación profesional del prestador del Servicio Social."]
     ],
     [
+        r".*costo de fichas de admision.*",
+        ["Las fichas de admision para nuevos aspirantes tiene el costo de 700 pesos"]
+    ],
+    [
+        r".*documentos.*.*(inscripcion|inscribirme|admision).*",
+        ["Constancia del último semestre de bachillerato o Certificado de Bachillerato(formato pdf)\nActa de nacimiento(formato pdf)\n CURP(formato pdf)\nComprobante de domicilio(formato pdf)\nComprobante SUREDSU(formato pdf)\nFoto o selfie tomada completamente de frente, con el rostro serio, frente descubierta, a la altura de los hombros y fondo blanco o en un color claro (formato jpg o png) "]
+    ],
+    [
+        r".*descuentos.*.*beca.*convenio.*",
+        ["Claro! existen becas que relizan un descuento en las inscripciones, pregunta en servicios escolares para una informacion actualizada"]
+    ],
+    [
         r".*(ayuda|informacion).*",
         ["Puedes preguntarme sobre las carreras ofertadas en el ITSUR o pedir información específica sobre alguna carrera en particular."]
     ],
+    # Otros idiomas
+    [
+        r".*otros idiomas.*",
+        ["En el centro de idiomas se ofertan otros idiomas si se llega al cupo mínimo, entre estas están frances, japones, si se requiere saber más favor de comunicarse al siguiente correo: idiomas@itsur.edu.mx "]
+    ],
+    [
+        r".*?(pagos|pago|pagar).*?(constancia|constancias|titulo).*?",
+        ["Los pagos de cualquier tipo se realizan en la oficina de tesoreria en el horario de atención de 9:00 am a 4:00pm"]],
     [
         r".*(gracias|adios).*",
         [
@@ -352,7 +384,8 @@ def preprocess_text(text):
 
 
 def crear_chatbot():
-    print("¡Hola! Soy el chatbot del ITSUR. ¿En qué puedo ayudarte hoy?")
+
+    print("¡Hola! Soy Chatito, el aistente del ITSUR. ¿En qué puedo ayudarte hoy?")
     chatbot = Chat(pares, reflections)
     # Sobrescribir método _preprocess para el procesamiento personalizado del texto
     chatbot._preprocess = preprocess_text
