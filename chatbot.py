@@ -19,6 +19,10 @@ pares = [
         ["DIRECCIÓN DEL PLANTEL:\nAv. EducaciÓn Superior #2000,\nCol. Benito Juárez.\nUriangato, Gto.\nC.P. 38980"]
     ],
     [
+        r".*Cuantos alumnos?.*",
+        ["Actualmente hay 1712 alumnos inscritos al ITSUR en alguna de sus 7 carreras"]
+    ],
+    [
         r".*(directorio|contacto).*",
         ["Claro, al tener varias áreas, es mejor que te proporcione el link al directorio para que encuentres lo que busques:\nhttp://www.itsur.edu.mx/directorio.php/"]
     ],
@@ -31,10 +35,13 @@ pares = [
         ["Si deseas inscribirte o sacar una ficha para postularte al ITSUR, revisa frecuentementa las convocatorias en nuestra página oficial o ponte en contacto:\n 445 458 8278, 445 457 7468 al 71, 445 458 8311, 445 458 8312 ext. *116\n445 106 6007 fichas@itsur.edu.mx\nAv. Educación Superior No. 2000, Col. Juárez, Uriangato, Gto. C.P. 38982\nTodos los derechos reservados © ITSUR 2023\nDe igual forma puedes acceder a esta página para ver cual es el proceso de sacar una ficha:\nhttps://fichas.surguanajuato.tecnm.mx/"]
     ],
     [
+        r".*fecha limite*",
+        ["Actualmente la fecha limite para inscripción para el examen de admisión es el 31 de Mayo del 2023"]
+    ],
+    [
         r".*(carreras|opciones).*(oferta|ofertadas|disponibles|ofrece|dispone|tiene).*",
         ["En el ITSUR ofrecemos las siguientes carreras: \n\n- Gastronomía\n- Ing. S. Automotrices\n- Ing. Ambiental\n- Ing. Sistemas C.\n- Ing. Industrial\n- Ing. Electrónica\n- Ing. Gestión Empresarial"]
     ],
-
     [
         r".*(carrera|informacion|info).*sistemas.*",
         ["La carrera de sistemas está actualmente especializada en Desarrollo web y aplicaciones móviles, si tienes más dudas puedes preguntarme de la carga académica de esta especialidad por semestre o solamente en general"]
@@ -323,6 +330,11 @@ pares = [
     [
         r".*(ayuda|informacion).*",
         ["Puedes preguntarme sobre las carreras ofertadas en el ITSUR o pedir información específica sobre alguna carrera en particular."]
+    ],
+     # Otros idiomas
+    [
+        r".*otros idiomas.*",
+        ["En el centro de idiomas se ofertan otros idiomas si se llega al cupo mínimo, entre estas están frances, japones, si se requiere saber más favor de comunicarse al siguiente correo: idiomas@itsur.edu.mx "]
     ],
     [
         r".*(gracias|adios).*",
